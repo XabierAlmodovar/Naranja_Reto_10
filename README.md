@@ -46,6 +46,9 @@ Para ejecutar correctamente el proyecto, este **incluye una carpeta de datos tra
 5. `05-UX Experience.ipynb`
 6. `funciones.py`
 7. `lookiero_colors.py`
+8. 'bigdata/01 - Producer.py'
+9. 'bigdata/02 - Consumer.py'
+10. 'bigdata/03 - App.py'
 7. `3-Data_Science.ipynb` → Análisis de las series temporales.
 8. `4-Hiperparametros.ipynb` → Ajuste de parámetros y análisis de rendimiento.
 9. `1c-Red_Neuronal.ipynb`→ Construcción, entrenamiento y evaluación de una LSTM.
