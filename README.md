@@ -20,13 +20,13 @@ Para ejecutar correctamente el proyecto, este **incluye una carpeta de datos tra
 
 | Archivo / Carpeta               | Descripción                                                                                                                              |
 | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `.gitignore`                    | Oculta los archivos de datos (`.csv`) para no subirlos al repositorio.                                                     |
-| `Scripts/01-Limpieza.ipynb`           | Notebook dedicado a la primera parte de la **limpieza** de los datos originales.                                              |
-| `Scripts/02-Limpieza.ipynb`    | Notebook dedicado a la segunda parte de la **limpieza** de los datos originales.                 |
-| `Scripts/03-Analisis Descriptivo.ipynb`    | Notebook dedicado al **análisis descriptivo** de los datos limpios y ya filtrados de las prendas.                 |
-| `Scripts/04-Grafo y Red.ipynb`         | Script dedicado a la creación del grafo y la red neuronal     |
-| `Scripts/05-UX Experience.ipynb`  | Cálculo del **payoff**, **valor presente (prima)** y comparativa de resultados teóricos.                                                  |
-| `Scripts/app.py`  | Cálculo del **payoff**, **valor presente (prima)** y comparativa de resultados teóricos.                                                  |
+| `.gitignore`                    | Oculta los archivos de datos (`.csv`) para no subirlos al repositorio.BIEN                                                     |
+| `Scripts/01-Limpieza.ipynb`           | Notebook dedicado a la primera parte de la **limpieza** de los datos originales.BIEN                                              |
+| `Scripts/02-Limpieza.ipynb`    | Notebook dedicado a la segunda parte de la **limpieza** de los datos originales.BIEN                 |
+| `Scripts/03-Analisis Descriptivo.ipynb`    | Notebook dedicado al **análisis descriptivo** de los datos limpios y ya filtrados de las prendas.BIEN                 |
+| `Scripts/04-Grafo y Red.ipynb`         | Script dedicado a la creación del grafo y la red neuronal para el cumplimiento de los objetivos.BIEN     |
+| `Scripts/05-UX Experience.ipynb`  | Notebook para el análisis de la experiencia del cliente con los datos proporcionados por Lookiero.BIEN                                                  |
+| `Scripts/app.py`  | Script empleado para crear la regla de colorimetria,                                                  |
 | `Scripts/funciones.py`  | Archivo auxiliar con **funciones personalizadas** utilizadas en distintos notebooks (por ejemplo, para cálculos del grafo).                                                  |
 | `Scripts/lookiero_colors.py`  | Aqui se incluye la paleta de colores principales y secundarios de Lookiero, para gráficos y demás.                                                  |
 | `/bigdata`            | Esta subcarpeta contiene el desarrollo del entregable de BigData:**un pipeline de Kafka** con el que realizar recomendaciones de combinaciones de 3 prendas. El profesor deberá tener abierto docker y ejecutar docker compose up -d desde Powershell. Se ejecutará primero el producer.py, después el consumer.py, con los que se ejecutará el pipeline completo desde Python. Para una mayor personalización, se ha creado una app de Flask con la que escoger una prenda del grafo antes de realizar la misma arquitectura con Kafka, pero con una prenda escogida por el cliente. Para ello, se borrará primero look_generados.csv, creado anteriormente al ejecutar el consumer.py, y se ejecutará app.py para lanzar la aplicación Flask.                         |
