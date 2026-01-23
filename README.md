@@ -31,10 +31,6 @@ Para ejecutar correctamente el proyecto, este **incluye una carpeta de datos tra
 | `Scripts/lookiero_colors.py`  | Aqui se incluye la paleta de colores principales y secundarios de Lookiero, para gráficos y demás.                                                  |
 | `/bigdata`            | Esta subcarpeta contiene el desarrollo del entregable de BigData:**un pipeline de Kafka** con el que realizar recomendaciones de combinaciones de 3 prendas. El profesor deberá tener abierto docker y ejecutar docker compose up -d desde Powershell. Se ejecutará primero el producer.py, después el consumer.py, con los que se ejecutará el pipeline completo desde Python. Para una mayor personalización, se ha creado una app de Flask con la que escoger una prenda del grafo antes de realizar la misma arquitectura con Kafka, pero con una prenda escogida por el cliente. Para ello, se borrará primero look_generados.csv, creado anteriormente al ejecutar el consumer.py, y se ejecutará app.py para lanzar la aplicación Flask.                         |
 | `/web_reto10`         | Carpeta donde se desarrolla el entregable de Visualización, una **web de visualización Lookiero**. En ella se incluyen archivos.html con datos de cada página, una carpeta /scripts donde están los .js, donde se realizan los gráficos pertinentes y otra carpeta /fotos, donde se incluyen las fotos que se muestran en la web. Para ejecutar la web se debe estar en la carpeta /web_reto10 y pulsar index.html para abrir la web.             |
-| `1c-Red_Neuronal.ipynb`            | Construcción, entrenamiento y evaluación una red neuronal LSTM, para analizar el rendimiento y comparar distintas configuraciones del modelo        |
-| `funciones.py`                  | Archivo auxiliar con **funciones personalizadas** utilizadas en distintos notebooks (por ejemplo, para cálculos del grafo). |
-| `app.py`              | Es una app creada con Flask con la que se crearon las reglas de color del grafo, los integrantes del grupo eligieron que colores combinaban y cuales no entre los colores de Lookiero para después crear resultados_combinaciones.csv con las elecciones. Se crea                                                                     |
-| `lookiero_colors.py`              | Paleta de colores de Lookiero.                                                                   |
 | `README.md`                     | Documento actual que explica la **estructura y funcionamiento** del proyecto.
 
 ## Orden de Ejecución de los Notebooks
@@ -49,9 +45,7 @@ Para ejecutar correctamente el proyecto, este **incluye una carpeta de datos tra
 8. 'bigdata/01 - Producer.py'
 9. 'bigdata/02 - Consumer.py'
 10. 'bigdata/03 - App.py'
-7. `3-Data_Science.ipynb` → Análisis de las series temporales.
-8. `4-Hiperparametros.ipynb` → Ajuste de parámetros y análisis de rendimiento.
-9. `1c-Red_Neuronal.ipynb`→ Construcción, entrenamiento y evaluación de una LSTM.
+11. '/web_reto10'
 
 ## Tecnologías y librerías utilizadas
 
