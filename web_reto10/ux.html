@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>UX · Lookiero</title>
+    <link rel="stylesheet" href="style.css">
+    
+
+        
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <div class="logo">
+            <a href="index.html">
+                <img src="fotos/logo-lookiero.png" alt="Lookiero">
+            </a>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">Inicio</a>
+            <a href="contexto.html">Contexto</a>
+            <a href="cliente.html">Cliente</a>
+            <a href="ux.html" class="active">UX</a>
+            <a href="combinaciones.html">Colores</a>
+            <a href="recomendador.html">Recomendador</a>
+            <a href="looks_generados.html">Outfits</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container content">
+    
+    <div class="text-container">
+        <h2>Análisis de UX basado en Datos</h2>
+        <p>Basándonos en el análisis de <span class="data-highlight">41 usuarios reales</span> y sus interacciones, hemos transformado la experiencia de usuario de Lookiero. Los datos revelan patrones críticos en la toma de decisiones y puntos exactos donde el usuario necesita mayor apoyo visual.</p>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <h4>78%</h4>
+                <p>Tasa de Finalización (32 de 41 usuarios)</p>
+            </div>
+            <div class="stat-card">
+                <h4>45.5%</h4>
+                <p>Eficacia en Recuperación de Sesiones</p>
+            </div>
+            <div class="stat-card">
+                <h4>55.5%</h4>
+                <p>Fuga crítica en "Leisure" (Punto mortal)</p>
+            </div>
+            <div class="stat-card">
+                <h4>54s</h4>
+                <p>Máxima Mediana de Tiempo (Sección Fotos)</p>
+            </div>
+        </section>
+    </div>
+
+    <section class="charts">
+        <div id="completionChart" class="chart-card"></div>
+        <div id="timeBySectionChart" class="chart-card"></div>
+        <div id="photosBlockingChart" class="chart-card"></div>
+        <div id="flowChart" class="chart-card"></div>
+    </section>
+
+    <div class="text-container">
+        <h3>Hallazgos del Flujo de Usuario</h3>
+        <p>El análisis de tiempos de respuesta nos permite dividir el onboarding en dos tipos de carga cognitiva:</p>
+        <ul>
+            <li><strong>Preguntas Instintivas (Rápidas):</strong> El color de ojos y pelo se resuelven en menos de <span class="data-highlight">9 segundos</span>. Aquí el flujo es fluido y el usuario no encuentra resistencia.</li>
+            <li><strong>Preguntas Reflexivas (Complejas):</strong> Las secciones de <em>Estilo</em> y <em>Fotos</em> requieren más de <span class="data-highlight">50-60 segundos</span>. Esto confirma que el soporte visual es fundamental pero puede generar fatiga si no se simplifica.</li>
+            <li><strong>Fricción en el Tallaje:</strong> Se detectó que en la sección de tallas, los usuarios tardan <span class="data-highlight">29 segundos en avanzar</span>, pero los que dudan retroceden en solo <span class="data-highlight">12 segundos</span> hacia la forma del cuerpo, indicando una clara necesidad de ajuste preventivo en la sección previa.</li>
+        </ul>
+
+        <h3>Recomendaciones Estratégicas</h3>
+        <ol>
+            <li><strong>Optimizar el "Gancho" Inicial:</strong> Dado que el 55% de los abandonos ocurren en la primera pregunta (leisure), debemos simplificar esta entrada o hacerla opcional para aumentar el <em>momentum</em> del usuario.</li>
+            <li><strong>Rediseño de la Sección de Calzado:</strong> Los datos muestran que <span class="data-highlight">1 de cada 3 usuarios exitosos</span> prefiere saltarse la pregunta de calzado. Recomendamos integrarla de forma menos invasiva o como un paso secundario.</li>
+            <li><strong>Guías de Tallaje Dinámicas:</strong> Implementar ayuda visual inmediata en la sección de tallas para evitar el "bucle de retorno" hacia la forma del cuerpo detectado en el análisis.</li>
+            <li><strong>Reducción de Carga en Registro:</strong> El proceso de Sign-Up presenta una mediana de <span class="data-highlight">28 segundos</span>. Reducir los campos de entrada es vital para asegurar la conversión final tras el esfuerzo del test.</li>
+        </ol>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container">© 2024 Proyecto Big Data Lookiero · Análisis de UX basado en 41 sesiones de usuario</div>
+</footer>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="scripts/graficos.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Recomendador · Lookiero</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <a href="index.html">
+                <img src="fotos/logo-lookiero.png" alt="Lookiero">
+            </a>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">Inicio</a>
+            <a href="contexto.html">Contexto</a>
+            <a href="cliente.html">Cliente</a>
+            <a href="ux.html">UX</a>
+            <a href="combinaciones.html">Colores</a>
+            <a href="recomendador.html" class="active">Recomendador</a>
+            <a href="looks_generados.html">Outfits</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <section class="hero">
+        <h1>Tu Personal Shopper</h1>
+        <p class="lead">Selecciona una prenda de tu armario y nuestro algoritmo inteligente te propondrá el outfit completo ideal.</p>
+    </section>
+
+    <section class="content">
+        <div class="results-area">
+            <label for="prendaSelect" style="display:block; margin-bottom:10px; font-weight:600;">¿Qué prenda quieres combinar?</label>
+            
+            <select id="prendaSelect" style="width:100%; padding:12px; border:1px solid #ddd; border-radius:6px; margin-bottom:20px;">
+                <option value="" disabled selected>Cargando catálogo...</option>
+            </select>
+
+            <button id="btnGenerar" class="cta-button">GENERAR OUTFIT</button>
+        </div>
+    </section>
+
+    <section class="hero" style="padding-top: 20px;">
+        <h2 style="font-size: 24px;">Propuesta de Estilo:</h2>
+        
+        <div id="mensajeInicial" class="result-message info" style="max-width:600px; margin:0 auto;">
+            Selecciona una prenda arriba para descubrir tu combinación perfecta.
+        </div>
+
+        <div id="resultadoContainer" class="result-container">
+            
+            <div class="card-look main">
+                <div style="font-size:24px; margin-bottom:10px;"></div>
+                <h3>Tu Selección</h3>
+                <p id="txtItem1">...</p>
+            </div>
+            
+            <div class="card-look main">
+                <div style="font-size:24px; margin-bottom:10px;"></div>
+                <h3>Combina con</h3>
+                <p id="txtItem2">...</p>
+            </div>
+            
+            <div class="card-look main">
+                <div style="font-size:24px; margin-bottom:10px;"></div>
+                <h3>Completa con</h3>
+                <p id="txtItem3">...</p>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">© 2026 Proyecto Visualización Lookiero</div>
+</footer>
+
+<script src="scripts/datos_graph.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const select = document.getElementById('prendaSelect');
+        const btn = document.getElementById('btnGenerar');
+        const container = document.getElementById('resultadoContainer');
+        const msgInfo = document.getElementById('mensajeInicial');
+        
+        const txt1 = document.getElementById('txtItem1');
+        const txt2 = document.getElementById('txtItem2');
+        const txt3 = document.getElementById('txtItem3');
+
+        // Verificar datos
+        if (typeof GRAPH_DATA === 'undefined') {
+            select.innerHTML = "<option>Error: Ejecuta generar_datos.py</option>";
+            alert("No se encontró el archivo 'datos_graph.js'. Ejecuta el script de Python primero.");
+            return;
+        }
+
+        // Llenar select
+        select.innerHTML = '<option value="" disabled selected>Selecciona una prenda...</option>';
+        GRAPH_DATA.display_ids.forEach(id => {
+            const item = GRAPH_DATA.nodes[id];
+            if(item) {
+                const opt = document.createElement('option');
+                opt.value = id;
+                opt.textContent = item.title;
+                select.appendChild(opt);
+            }
+        });
+
+        // Click Generar
+        btn.addEventListener('click', () => {
+            const idSel = parseInt(select.value);
+            if(isNaN(idSel)) {
+                alert("Por favor, selecciona una prenda.");
+                return;
+            }
+
+            const vecinos = GRAPH_DATA.edges[idSel];
+            if(!vecinos || vecinos.length < 2) {
+                alert("Esta prenda no tiene suficientes combinaciones.");
+                return;
+            }
+
+            // Seleccionar 2 vecinos únicos
+            let ids = [idSel];
+            for(let v of vecinos) {
+                if(!ids.includes(v.id)) ids.push(v.id);
+                if(ids.length === 3) break;
+            }
+
+            // Mostrar
+            txt1.textContent = GRAPH_DATA.nodes[ids[0]].title;
+            txt2.textContent = GRAPH_DATA.nodes[ids[1]].title;
+            txt3.textContent = GRAPH_DATA.nodes[ids[2]].title;
+
+            msgInfo.style.display = 'none';
+            container.classList.add('visible');
+        });
+    });
+</script>
+
+</body>
+</html>
+
