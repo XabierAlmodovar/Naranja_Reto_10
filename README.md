@@ -1,11 +1,9 @@
 # Naranja Reto 10: Valoración de una Call Asiática sobre una Cartera de Acciones del Dow Jones
 ## Explicación general
 
-Este proyecto tiene como objetivo **valorar una opción financiera tipo call asiática** compuesta por **tres acciones del índice Dow Jones**, aplicando tanto **métodos matemáticos tradicionales** como **técnicas de machine learning**.
+En este reto, los equipos trabajan sobre una problemática planteada por Lookiero relacionada con la mejora de la experiencia de las clientas en su producto principal, la caja Lookiero, que contiene una selección personalizada de prendas. El proyecto se aborda desde la perspectiva del customer experience (CX), poniendo el foco en el cuestionario inicial de las usuarias y en el proceso de selección de prendas.
 
-El trabajo se centra en **simular la evolución del precio de las acciones** durante un periodo de cinco años mediante el **método de Montecarlo**, modelado con un proceso browniano estocástico. A partir de esas simulaciones, se calcula el **payoff medio geométrico** de la opción y se obtiene el valor presente (prima) de la misma.
-
-Además, se desarrolla un **modelo predictivo basado en datos (red neuronal)** con el fin de **reducir la complejidad computacional** y comparar su desempeño frente al modelo teórico.
+Para ello, se analiza la user experience (UX) de la plataforma a partir de datos simulados de uso web, utilizando herramientas como Google Analytics para extraer información relevante y facilitar la toma de decisiones. Asimismo, se desarrolla un sistema de generación de looks basado en grafos y modelos predictivos, junto con una interfaz de visualización interactiva, con el objetivo de apoyar el trabajo de las personal shoppers y mejorar la experiencia global de las clientas.
 
 ## Objetivos del reto
 
@@ -26,7 +24,7 @@ Se deben incorporar manualmente en una carpeta llamada "Datos/", siguiendo la es
 
 | Archivo / Carpeta               | Descripción                                                                                                                              |
 | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `.gitignore`                    | Oculta los archivos de datos (`.csv`, `.pkl`, etc.) para no subirlos al repositorio.                                                     |
+| `.gitignore`                    | Oculta los archivos de datos (`.csv`) para no subirlos al repositorio.                                                     |
 | `0-Limpieza_O2.ipynb`           | Notebook dedicado al **preprocesamiento y limpieza** de los datos originales del Dow Jones.                                              |
 | `1-Montecarlo_Naranja.ipynb`    | Implementación de la **simulación Montecarlo** para generar datos sintéticos y modelar la evolución de los tres activos.                 |
 | `1b-Formula_BBVA.ipynb`         | Definición de la fórmula matemática del activo BBVA, aplicando los parámetros necesarios para calcular su evolución y valor dentro de la cartera    |
