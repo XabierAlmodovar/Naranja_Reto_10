@@ -25,7 +25,7 @@ except Exception as e:
 
 print("Cargando CSV de prendas...")
 try:
-    df_prendas = pd.read_csv('season9_limpios.csv')
+    df_prendas = df_nodes = pd.read_csv("../Datos/Transformados/Season9_limpios.csv")
     id_to_title = dict(
         zip(df_prendas['indice'].astype(int), df_prendas['title'].astype(str))
     )

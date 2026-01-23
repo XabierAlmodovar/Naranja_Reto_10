@@ -35,7 +35,7 @@ if __name__ == "__main__":
 
     print("\nLeyendo prendas desde CSV...")
     try:
-        df_prendas = pd.read_csv('season9_limpios.csv')
+        df_prendas = pd.read_csv("../Datos/Transformados/Season9_limpios.csv")
         prenda_escogida = random.choice(df_prendas['indice'].tolist())
 
         

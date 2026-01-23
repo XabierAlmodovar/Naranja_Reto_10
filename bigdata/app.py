@@ -26,7 +26,7 @@ producer = Producer(KAFKA_CONF_PRODUCER)
 print("Cargando grafo y datos...")
 
 G = joblib.load('grafo_season9.pkl')
-df_prendas = pd.read_csv('season9_limpios.csv')
+df_prendas = pd.read_csv("../Datos/Transformados/Season9_limpios.csv")
 
 id_to_title = dict(zip(df_prendas['indice'].astype(int), df_prendas['title']))
 id_to_type = {
