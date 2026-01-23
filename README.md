@@ -25,12 +25,12 @@ Se deben incorporar manualmente en una carpeta llamada "Datos/", siguiendo la es
 | Archivo / Carpeta               | Descripción                                                                                                                              |
 | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | `.gitignore`                    | Oculta los archivos de datos (`.csv`) para no subirlos al repositorio.                                                     |
-| `0-Limpieza_O2.ipynb`           | Notebook dedicado al **preprocesamiento y limpieza** de los datos originales del Dow Jones.                                              |
-| `1-Montecarlo_Naranja.ipynb`    | Implementación de la **simulación Montecarlo** para generar datos sintéticos y modelar la evolución de los tres activos.                 |
+| `01-Limpieza_.ipynb`           | Notebook dedicado al **preprocesamiento y limpieza** de los datos originales del Dow Jones.                                              |
+| `02-Limpieza.ipynb`    | Implementación de la **simulación Montecarlo** para generar datos sintéticos y modelar la evolución de los tres activos.                 |
 | `1b-Formula_BBVA.ipynb`         | Definición de la fórmula matemática del activo BBVA, aplicando los parámetros necesarios para calcular su evolución y valor dentro de la cartera    |
 | `2-Calculos_financieros.ipynb`  | Cálculo del **payoff**, **valor presente (prima)** y comparativa de resultados teóricos.                                                  |
-| `3-Data_Science.ipynb`            | Contiene el desarrollo del **análisis de las series temporales** de las tres acciones que forman la cartera.                             |
-| `4-Hiperparametros.ipynb`         | Notebook donde se experimenta con los **hiperparámetros** del modelo (número de capas, tasa de aprendizaje, épocas, etc.).               |
+| `/bigdata`            | Esta subcarpeta contiene el desarrollo del entregable de BigData:**un pipeline de Kafka** con el que realizar recomendaciones de combinaciones de 3 prendas. El profesor deberá tener abierto docker y ejecutar docker compose up -d desde Powershell. Se ejecutará primero el producer.py, después el consumer.py, con los que se ejecutará el pipeline completo desde Python. Para una mayor personalización, se ha creado una app de Flask con la que escoger una prenda del grafo antes de realizar la misma arquitectura con Kafka, pero con una prenda escogida por el cliente. Para ello, se borrará primero look_generados.csv, creado anteriormente al ejecutar el consumer.py, y se ejecutará app.py para lanzar la aplicación Flask.                         |
+| `/web_reto10`         | Carpeta donde se desarrolla el entregable de Visualización, una **web de visualización Lookiero**. En ella se incluyen archivos.html con datos de cada página, una carpeta /scripts donde están los .js, donde se realizan los gráficos pertinentes y otra carpeta /fotos, donde se incluyen las fotos que se muestran en la web. Para ejecutar la web se debe estar en la carpeta /web_reto10 y pulsar index.html para abrir la web.             |
 | `1c-Red_Neuronal.ipynb`            | Construcción, entrenamiento y evaluación una red neuronal LSTM, para analizar el rendimiento y comparar distintas configuraciones del modelo        |
 | `funciones.py`                  | Archivo auxiliar con **funciones personalizadas** utilizadas en distintos notebooks (por ejemplo, para cálculos financieros o métricas). |
 | `requirements.txt`              | Contiene las **librerías necesarias** para la ejecución del proyecto.                                                                    |
@@ -49,11 +49,16 @@ Se deben incorporar manualmente en una carpeta llamada "Datos/", siguiendo la es
 ## Tecnologías y librerías utilizadas
 
 - Python
-- NumPy, Pandas, SciPy, Matplotlib
-- scikit-learn, TensorFlow (para redes neuronales)
+- NumPy, Pandas, Flask, Matplotlib, Kafka, D3
+- scikit-learn, joblib, torch, networkx (para grafos)
 - Jupyter Notebook
 
 ## Conclusión
 
-El proyecto combina **finanzas cuantitativas** y **machine learning** para abordar un problema clásico del sector financiero: la valoración de derivados exóticos sin fórmula cerrada.
-A través del método de Montecarlo y las técnicas de aprendizaje automático, se busca **mejorar la eficiencia y precisión** en la estimación del precio de una opción asiática sobre una cartera de acciones reales.
+El análisis de datos de UX permite identificar puntos de mejora clave en el proceso de onboarding y en la experiencia de las clientas.
+
+El uso de grafos y modelos predictivos facilita la generación de recomendaciones de looks coherentes y escalables.
+
+La combinación de análisis de datos y visualizaciones interactivas mejora la toma de decisiones de las personal shoppers.
+
+Integrar técnicas de Big Data y Machine Learning contribuye a personalizar la experiencia de las clientas de forma más eficiente.
