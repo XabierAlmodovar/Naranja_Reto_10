@@ -1,4 +1,4 @@
-# Naranja Reto 10: Recomendador de prendas Lookiero basado en grafos
+# Naranja Reto 10: Recomendador de Looks mediante Grafos y GNN
 ## Explicación general
 
 En este reto, los equipos trabajan sobre una problemática planteada por Lookiero relacionada con la mejora de la experiencia de las clientas en su producto principal, la caja Lookiero, que contiene una selección personalizada de prendas. El proyecto se aborda desde la perspectiva del customer experience (CX), poniendo el foco en el cuestionario inicial de las usuarias y en el proceso de selección de prendas.
