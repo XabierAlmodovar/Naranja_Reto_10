@@ -1,4 +1,4 @@
-# Naranja Reto 10: Valoración de una Call Asiática sobre una Cartera de Acciones del Dow Jones
+# Naranja Reto 10: Recomendador de prendas Lookiero basado en grafos
 ## Explicación general
 
 En este reto, los equipos trabajan sobre una problemática planteada por Lookiero relacionada con la mejora de la experiencia de las clientas en su producto principal, la caja Lookiero, que contiene una selección personalizada de prendas. El proyecto se aborda desde la perspectiva del customer experience (CX), poniendo el foco en el cuestionario inicial de las usuarias y en el proceso de selección de prendas.
@@ -23,14 +23,14 @@ Se deben incorporar manualmente en una carpeta llamada "Datos/", siguiendo la es
 | Archivo / Carpeta               | Descripción                                                                                                                              |
 | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | `.gitignore`                    | Oculta los archivos de datos (`.csv`) para no subirlos al repositorio.                                                     |
-| `Scripts/01-Limpieza.ipynb`           | Notebook dedicado a la **limpieza** de los datos originales del Dow Jones.                                              |
-| `Scripts/02-Limpieza.ipynb`    | Implementación de la **simulación Montecarlo** para generar datos sintéticos y modelar la evolución de los tres activos.                 |
+| `Scripts/01-Limpieza.ipynb`           | Notebook dedicado a la primera parte de la **limpieza** de los datos originales.                                              |
+| `Scripts/02-Limpieza.ipynb`    | Notebook dedicado a la segunda parte de la **limpieza** de los datos originales.                 |
 | `Scripts/03-Analisis Descriptivo.ipynb`    | Implementación de la **simulación Montecarlo** para generar datos sintéticos y modelar la evolución de los tres activos.                 |
 | `Scripts/04-Grafo y Red.ipynb`         | Definición de la fórmula matemática del activo BBVA, aplicando los parámetros necesarios para calcular su evolución y valor dentro de la cartera    |
 | `Scripts/05-UX Experience.ipynb`  | Cálculo del **payoff**, **valor presente (prima)** y comparativa de resultados teóricos.                                                  |
 | `Scripts/app.py`  | Cálculo del **payoff**, **valor presente (prima)** y comparativa de resultados teóricos.                                                  |
-| `Scripts/funciones.py`  | Cálculo del **payoff**, **valor presente (prima)** y comparativa de resultados teóricos.                                                  |
-| `Scripts/lookiero_colors.py`  | Cálculo del **payoff**, **valor presente (prima)** y comparativa de resultados teóricos.                                                  |
+| `Scripts/funciones.py`  | Archivo auxiliar con **funciones personalizadas** utilizadas en distintos notebooks (por ejemplo, para cálculos del grafo).                                                  |
+| `Scripts/lookiero_colors.py`  | Aqui se incluye la paleta de colores principales y secundarios de Lookiero, para gráficos y demás.                                                  |
 | `/bigdata`            | Esta subcarpeta contiene el desarrollo del entregable de BigData:**un pipeline de Kafka** con el que realizar recomendaciones de combinaciones de 3 prendas. El profesor deberá tener abierto docker y ejecutar docker compose up -d desde Powershell. Se ejecutará primero el producer.py, después el consumer.py, con los que se ejecutará el pipeline completo desde Python. Para una mayor personalización, se ha creado una app de Flask con la que escoger una prenda del grafo antes de realizar la misma arquitectura con Kafka, pero con una prenda escogida por el cliente. Para ello, se borrará primero look_generados.csv, creado anteriormente al ejecutar el consumer.py, y se ejecutará app.py para lanzar la aplicación Flask.                         |
 | `/web_reto10`         | Carpeta donde se desarrolla el entregable de Visualización, una **web de visualización Lookiero**. En ella se incluyen archivos.html con datos de cada página, una carpeta /scripts donde están los .js, donde se realizan los gráficos pertinentes y otra carpeta /fotos, donde se incluyen las fotos que se muestran en la web. Para ejecutar la web se debe estar en la carpeta /web_reto10 y pulsar index.html para abrir la web.             |
 | `1c-Red_Neuronal.ipynb`            | Construcción, entrenamiento y evaluación una red neuronal LSTM, para analizar el rendimiento y comparar distintas configuraciones del modelo        |
