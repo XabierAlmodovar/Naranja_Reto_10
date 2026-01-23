@@ -101,7 +101,7 @@ def record_answer(yes, no, idx, results):
     results.append({'color_a': c1,'color_b': c2,'pattern': p,'label': label})
 
     # Guardar cada fila en CSV inmediatamente
-    pd.DataFrame(results).to_csv('resultados_combinaciones.csv', index=False)
+    pd.DataFrame(results).to_csv('../Datos/Transformados/resultados_combinaciones.csv', index=False)
 
     return results, idx + 1, results
 
