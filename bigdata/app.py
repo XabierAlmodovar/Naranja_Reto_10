@@ -7,9 +7,7 @@ import pandas as pd
 from flask import Flask, request, render_template_string
 from confluent_kafka import Producer, Consumer, KafkaException
 
-# ===============================
-# CONFIGURACIÓN KAFKA
-# ===============================
+
 TOPIC = 'prenda_nueva'
 
 KAFKA_CONF_PRODUCER = {
@@ -24,9 +22,7 @@ KAFKA_CONF_CONSUMER = {
 
 producer = Producer(KAFKA_CONF_PRODUCER)
 
-# ===============================
-# CARGAS INICIALES
-# ===============================
+
 print("Cargando grafo y datos...")
 
 G = joblib.load('grafo_season9.pkl')
@@ -38,9 +34,7 @@ id_to_type = {
     for idx, title in zip(df_prendas['indice'].astype(int), df_prendas['title'])
 }
 
-# ===============================
-# FILTRAR PRENDAS VÁLIDAS
-# ===============================
+
 prendas_validas = [
     idx for idx in df_prendas['indice']
     if idx in G and len(G[idx]) >= 2
@@ -51,9 +45,8 @@ if len(prendas_validas) >= 30:
 else:
     df_30 = df_prendas[df_prendas['indice'].isin(prendas_validas)]
 
-# ===============================
-# FUNCIÓN DE VECINOS
-# ===============================
+#función para obtener los vecinos
+
 def obtener_vecinos_mas_cercanos(grafo, nodo, k=2):
     if nodo not in grafo:
         return []
@@ -119,7 +112,6 @@ def consumer_loop():
             columns=['Prenda Objetivo', 'Vecino 1', 'Vecino 2', 'item_objetivo']
         )
 
-        # Escritura segura del CSV (atómica)
         if os.path.exists(csv_path):
             df_old = pd.read_csv(csv_path)
             df_final = pd.concat([df_old, df_look], ignore_index=True)
@@ -228,9 +220,7 @@ La prenda seleccionada no dispone de suficientes combinaciones.
 
 
 
-# ===============================
-# ESPERAR LOOK
-# ===============================
+
 def esperar_look(prenda_id, timeout=20):
     start = time.time()
 
@@ -250,9 +240,7 @@ def esperar_look(prenda_id, timeout=20):
 
     return None
 
-# ===============================
-# RUTA PRINCIPAL
-# ===============================
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     look = None
@@ -286,9 +274,7 @@ def index():
         no_combinaciones=no_combinaciones
     )
 
-# ===============================
-# MAIN
-# ===============================
+
 if __name__ == '__main__':
     threading.Thread(target=consumer_loop, daemon=True).start()
     app.run(debug=True, use_reloader=False)
