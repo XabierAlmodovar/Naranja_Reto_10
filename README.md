@@ -14,9 +14,7 @@ Para ello, se analiza la user experience (UX) de la plataforma a partir de datos
 
 ## Requisitos para ejecutar el proyecto
 
-Para ejecutar correctamente el proyecto, es necesario crear un entorno Python con las librerías incluidas en el archivo "requirements.txt".
-Ejemplo de instalación:
-```pop install -r requirements.txt```
+Para ejecutar correctamente el proyecto,
 El proyecto **no incluye los datos originales** ni los datasets generados durante el proceso.
 Se deben incorporar manualmente en una carpeta llamada "Datos/", siguiendo la estructura definida en el informe del reto (enviado por mudle en el apartado "Entrega final".
 
@@ -25,10 +23,14 @@ Se deben incorporar manualmente en una carpeta llamada "Datos/", siguiendo la es
 | Archivo / Carpeta               | Descripción                                                                                                                              |
 | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | `.gitignore`                    | Oculta los archivos de datos (`.csv`) para no subirlos al repositorio.                                                     |
-| `01-Limpieza.ipynb`           | Notebook dedicado al **preprocesamiento y limpieza** de los datos originales del Dow Jones.                                              |
-| `02-Limpieza.ipynb`    | Implementación de la **simulación Montecarlo** para generar datos sintéticos y modelar la evolución de los tres activos.                 |
-| `04-Grafo y Red.ipynb`         | Definición de la fórmula matemática del activo BBVA, aplicando los parámetros necesarios para calcular su evolución y valor dentro de la cartera    |
-| `05-UX Experience.ipynb`  | Cálculo del **payoff**, **valor presente (prima)** y comparativa de resultados teóricos.                                                  |
+| `Scripts/01-Limpieza.ipynb`           | Notebook dedicado a la **limpieza** de los datos originales del Dow Jones.                                              |
+| `Scripts/02-Limpieza.ipynb`    | Implementación de la **simulación Montecarlo** para generar datos sintéticos y modelar la evolución de los tres activos.                 |
+| `Scripts/03-Analisis Descriptivo.ipynb`    | Implementación de la **simulación Montecarlo** para generar datos sintéticos y modelar la evolución de los tres activos.                 |
+| `Scripts/04-Grafo y Red.ipynb`         | Definición de la fórmula matemática del activo BBVA, aplicando los parámetros necesarios para calcular su evolución y valor dentro de la cartera    |
+| `Scripts/05-UX Experience.ipynb`  | Cálculo del **payoff**, **valor presente (prima)** y comparativa de resultados teóricos.                                                  |
+| `Scripts/app.py`  | Cálculo del **payoff**, **valor presente (prima)** y comparativa de resultados teóricos.                                                  |
+| `Scripts/funciones.py`  | Cálculo del **payoff**, **valor presente (prima)** y comparativa de resultados teóricos.                                                  |
+| `Scripts/lookiero_colors.py`  | Cálculo del **payoff**, **valor presente (prima)** y comparativa de resultados teóricos.                                                  |
 | `/bigdata`            | Esta subcarpeta contiene el desarrollo del entregable de BigData:**un pipeline de Kafka** con el que realizar recomendaciones de combinaciones de 3 prendas. El profesor deberá tener abierto docker y ejecutar docker compose up -d desde Powershell. Se ejecutará primero el producer.py, después el consumer.py, con los que se ejecutará el pipeline completo desde Python. Para una mayor personalización, se ha creado una app de Flask con la que escoger una prenda del grafo antes de realizar la misma arquitectura con Kafka, pero con una prenda escogida por el cliente. Para ello, se borrará primero look_generados.csv, creado anteriormente al ejecutar el consumer.py, y se ejecutará app.py para lanzar la aplicación Flask.                         |
 | `/web_reto10`         | Carpeta donde se desarrolla el entregable de Visualización, una **web de visualización Lookiero**. En ella se incluyen archivos.html con datos de cada página, una carpeta /scripts donde están los .js, donde se realizan los gráficos pertinentes y otra carpeta /fotos, donde se incluyen las fotos que se muestran en la web. Para ejecutar la web se debe estar en la carpeta /web_reto10 y pulsar index.html para abrir la web.             |
 | `1c-Red_Neuronal.ipynb`            | Construcción, entrenamiento y evaluación una red neuronal LSTM, para analizar el rendimiento y comparar distintas configuraciones del modelo        |
