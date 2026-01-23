@@ -14,9 +14,7 @@ Para ello, se analiza la user experience (UX) de la plataforma a partir de datos
 
 ## Requisitos para ejecutar el proyecto
 
-Para ejecutar correctamente el proyecto,
-El proyecto **no incluye los datos originales** ni los datasets generados durante el proceso.
-Se deben incorporar manualmente en una carpeta llamada "Datos/", siguiendo la estructura definida en el informe del reto (enviado por mudle en el apartado "Entrega final".
+Para ejecutar correctamente el proyecto, este **incluye una carpeta de datos transformados** con un dataset resultados_combinaciones_actualizado.csv generado durante el proceso. En él se encuentran las combinaciones de colores empleadas como regla para el grafo. No se debe ejecutar el script de Scripts/app.py, donde se genera este .csv, ya que se han escogido los colores en base a las opciones escogidas por el grupo Naranja.
 
 ## Estructura del proyecto
 
@@ -25,7 +23,7 @@ Se deben incorporar manualmente en una carpeta llamada "Datos/", siguiendo la es
 | `.gitignore`                    | Oculta los archivos de datos (`.csv`) para no subirlos al repositorio.                                                     |
 | `Scripts/01-Limpieza.ipynb`           | Notebook dedicado a la primera parte de la **limpieza** de los datos originales.                                              |
 | `Scripts/02-Limpieza.ipynb`    | Notebook dedicado a la segunda parte de la **limpieza** de los datos originales.                 |
-| `Scripts/03-Analisis Descriptivo.ipynb`    | Implementación de la **simulación Montecarlo** para generar datos sintéticos y modelar la evolución de los tres activos.                 |
+| `Scripts/03-Analisis Descriptivo.ipynb`    | Notebook dedicado al **análisis descriptivo** de los datos.                 |
 | `Scripts/04-Grafo y Red.ipynb`         | Definición de la fórmula matemática del activo BBVA, aplicando los parámetros necesarios para calcular su evolución y valor dentro de la cartera    |
 | `Scripts/05-UX Experience.ipynb`  | Cálculo del **payoff**, **valor presente (prima)** y comparativa de resultados teóricos.                                                  |
 | `Scripts/app.py`  | Cálculo del **payoff**, **valor presente (prima)** y comparativa de resultados teóricos.                                                  |
