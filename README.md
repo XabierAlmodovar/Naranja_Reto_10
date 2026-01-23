@@ -23,8 +23,8 @@ Para ejecutar correctamente el proyecto, este **incluye una carpeta de datos tra
 | `.gitignore`                    | Oculta los archivos de datos (`.csv`) para no subirlos al repositorio.                                                     |
 | `Scripts/01-Limpieza.ipynb`           | Notebook dedicado a la primera parte de la **limpieza** de los datos originales.                                              |
 | `Scripts/02-Limpieza.ipynb`    | Notebook dedicado a la segunda parte de la **limpieza** de los datos originales.                 |
-| `Scripts/03-Analisis Descriptivo.ipynb`    | Notebook dedicado al **análisis descriptivo** de los datos.                 |
-| `Scripts/04-Grafo y Red.ipynb`         | Definición de la fórmula matemática del activo BBVA, aplicando los parámetros necesarios para calcular su evolución y valor dentro de la cartera    |
+| `Scripts/03-Analisis Descriptivo.ipynb`    | Notebook dedicado al **análisis descriptivo** de los datos limpios y ya filtrados de las prendas.                 |
+| `Scripts/04-Grafo y Red.ipynb`         | Script dedicado a la creación del grafo y la red neuronal     |
 | `Scripts/05-UX Experience.ipynb`  | Cálculo del **payoff**, **valor presente (prima)** y comparativa de resultados teóricos.                                                  |
 | `Scripts/app.py`  | Cálculo del **payoff**, **valor presente (prima)** y comparativa de resultados teóricos.                                                  |
 | `Scripts/funciones.py`  | Archivo auxiliar con **funciones personalizadas** utilizadas en distintos notebooks (por ejemplo, para cálculos del grafo).                                                  |
@@ -39,13 +39,16 @@ Para ejecutar correctamente el proyecto, este **incluye una carpeta de datos tra
 
 ## Orden de Ejecución de los Notebooks
 
-1. `01-Limpieza.ipynb` → Limpieza y preparación de los datos originales.
-2. `02-Limpieza.ipynb` → Simulación de precios mediante el método de Montecarlo.
-3. `03-Grafo y Red.ipynb` → Definición de la fórmula del activo BBVA.
-4. `04-UX Experience.ipynb`→ Cálculo del payoff, prima y comparaciones.
-5. `3-Data_Science.ipynb` → Análisis de las series temporales.
-6. `4-Hiperparametros.ipynb` → Ajuste de parámetros y análisis de rendimiento.
-7. `1c-Red_Neuronal.ipynb`→ Construcción, entrenamiento y evaluación de una LSTM.
+1. `01-Limpieza.ipynb`
+2. `02-Limpieza.ipynb`
+3. `03-Análisis Descriptivo.ipynb`
+4. `04-Grafo y Red.ipynb'
+5. `05-UX Experience.ipynb`
+6. `funciones.py`
+7. `lookiero_colors.py`
+7. `3-Data_Science.ipynb` → Análisis de las series temporales.
+8. `4-Hiperparametros.ipynb` → Ajuste de parámetros y análisis de rendimiento.
+9. `1c-Red_Neuronal.ipynb`→ Construcción, entrenamiento y evaluación de una LSTM.
 
 ## Tecnologías y librerías utilizadas
 
